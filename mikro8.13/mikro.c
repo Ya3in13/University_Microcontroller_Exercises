@@ -1,0 +1,58 @@
+#include<mega16.h>
+#include<delay.h>
+main()
+{
+ DDRA=0B11111111;
+ while(1){ 
+     PORTA=0B00000001;
+ delay_ms(250);
+PORTA=0B00000000;
+     PORTA=0B00000010;       
+   delay_ms(250);
+PORTA=0B00000000;
+     PORTA=0B00000100;   
+   delay_ms(250);
+PORTA=0B00000000;    
+     PORTA=0B00001000;       
+   delay_ms(250);
+PORTA=0B00000000;
+     PORTA=0B00010000;
+ delay_ms(250);
+PORTA=0B00000000;
+     PORTA=0B00100000;
+ delay_ms(250);
+PORTA=0B00000000;
+     PORTA=0B01000000;
+   delay_ms(250);
+PORTA=0B00000000;
+    delay_ms(250);
+     PORTA=0B10000000;
+    delay_ms(250);
+PORTA=0B00000000;
+delay_ms(250);
+ PORTA=0B01000000;
+delay_ms(250);
+  PORTA=0B00000000;
+ delay_ms(250);
+PORTA=0B00100000;
+delay_ms(250);
+PORTA=0B00000000;
+delay_ms(250);
+PORTA=0B00010000;
+delay_ms(250);
+PORTA=0B00000000;
+delay_ms(250);
+PORTA=0B00001000;
+delay_ms(250);
+PORTA=0B00000000;
+delay_ms(250);
+PORTA=0B00000100;
+delay_ms(250);
+PORTA=0B00000000;
+delay_ms(250);
+PORTA=0B00000010;
+delay_ms(250);
+PORTA=0B0000000;
+delay_ms(250);
+ }
+ }

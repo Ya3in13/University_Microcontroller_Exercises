@@ -1,0 +1,30 @@
+#include <mega16.h>
+#include <delay.h>
+#include <alcd.h>
+
+#asm
+    .equ __kbd_port=0x1b ;PORTA
+#endasm
+#include <keypad.h>
+
+void main(void)
+{
+lcd_init(16);
+kbd_init();
+
+while (1)
+      { 
+      unsigned char keypressed;
+      lcd_clear();      
+      lcd_gotoxy(0,0);
+      lcd_putsf("Enter Key:");
+      lcd_gotoxy(0,1); 
+      _lcd_write_data(0x0f);     //Cursor blanked
+          while(1)
+          { 
+          keypressed=getkey();
+          lcd_putchar(keypressed);
+          if(keypressed=='C') break; //'C'-----> clear screen
+          }
+      }
+}

@@ -1,0 +1,8 @@
+#include <mega16.h>
+main(){
+DDRA=0B00000000;
+PORTA=0B11111111;
+DDRB=0B11111111;
+PORTB=0B11111111;
+}
+   

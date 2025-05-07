@@ -1,0 +1,29 @@
+#include <mega16.h> 
+#include <delay.h>
+main()
+{
+while(1)
+  {
+  DDRA=0X0;
+  PORTA=0XFF;
+  DDRC=0XFF;
+  DDRD=0XFF;
+    if(PINA.0==0&&PINA.1==0){
+    PORTD=0XFF;
+  
+    PORTC=0X6D;
+    delay_ms(1000);
+    PORTC=0X66;
+    delay_ms(1000);
+    PORTC=0X4F;
+    delay_ms(1000);
+    PORTC=0X5B;
+    delay_ms(1000);
+    PORTC=0X06;
+    delay_ms(1000);
+    PORTC=0X3F;
+     
+    PORTD=0X0; 
+  }
+  }
+  }

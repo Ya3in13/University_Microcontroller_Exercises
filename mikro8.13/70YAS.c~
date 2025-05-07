@@ -1,0 +1,26 @@
+#include <mega16.h>
+#include <delay.h>
+main()
+{   DDRC=0XFF;
+    DDRD=0XFF;
+  while(1){
+  PORTD=0XFF;
+  PORTC=0X4F; 
+  PORTD=0XFE;
+  delay_ms(4);
+  PORTD=0XFF;
+  PORTC=0X5B; 
+  PORTD=0XFD;
+  delay_ms(4);
+  PORTD=0XFF;
+  PORTC=0X7D; 
+  PORTD=0XFB;
+  delay_ms(4);
+  PORTD=0XFF;
+  PORTC=0X7D; 
+  PORTD=0XF7;
+  delay_ms(4);
+             }
+             }
+             
+  

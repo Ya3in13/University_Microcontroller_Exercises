@@ -1,0 +1,54 @@
+#include <mega16.h>
+#include <delay.h>
+    bit k ;  
+    bit v ;
+    int a =3266;
+    int seg[10] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x27,0x7F,0x6F};
+            
+ main(){
+    DDRA=0x00;
+    DDRC=0XFF;
+    DDRD=0xFF ;
+    PORTA=0xFF;
+
+
+    
+    
+    while(1){  
+    
+    if(PINA.0==0){
+    
+    a++;
+    k=1; 
+    }else k=0;
+
+    if(PINA.1==0){
+    if(v==0){
+    a--;
+    v=1; }
+    }else v=0;
+
+    PORTD=0x0F;
+    PORTC= seg[(a/1000)%10];
+    PORTD=0x0E;
+    delay_ms(4);
+    
+    PORTD=0x0F;
+    PORTC= seg[(a/100)%10];
+    PORTD=0x0D;
+    delay_ms(4);
+       
+    PORTD=0x0F;
+    PORTC= seg[(a/10)%10];
+    PORTD=0x0B;
+    delay_ms(4);
+    
+    PORTD=0x0F;
+    PORTC= seg[(a/1)%10];
+    PORTD=0x07;
+    delay_ms(4);    
+    
+    
+    
+    }  
+    }

@@ -1,0 +1,62 @@
+    DDRA=0x00;
+    DDRB=0x00;
+    DDRC=0XFF;
+    DDRD=0xFF ;
+    PORTA=0xFF;
+    PORTB=0xFF;
+    time=orgtime;
+    
+     while(1){  
+      PORTC=seg[time];
+      if(start==0){motor=1;}   
+       else if(sen==0){motor=0;valve=1;fels=1;time=orgtime;}
+       if(fels==1){
+       PORTC=seg[time];
+       time--;
+       delay_ms(1000);
+       
+       if(time==0){  
+       PORTC=seg[time];
+       valve=0;
+       fels=0;
+       time=orgtime;
+       ;}   
+      ;}      
+      
+     if(up==0){if(time<9){orgtime++;}delay_ms(500);time=orgtime;}
+     if(down==0){if(time>1){orgtime--;}delay_ms(500);time=orgtime;}   
+
+
+     }  
+    }
+    
+   PORTB=seg[3]; 
+   PORTC=0B01111101;
+   delay_ms(1000);
+   
+   PORTB=seg[2]; 
+   delay_ms(1000); 
+   
+   PORTB=seg[6]; 
+   delay_ms(1000);
+   
+   PORTB=seg[6];
+   delay_ms(1000); 
+   
+   
+       if(start==1){motor=1;}   
+       else if(sen==1){motor=0;fels=1;time=orgtime;}
+       if(fels==1){
+       PORTB=seg[time];
+       time--;
+       delay_ms(1000);
+       
+       if(time==0){  
+       PORTB=seg[time];
+       fels=0;
+       time=orgtime;
+       ;}   
+      ;}      
+      
+     if(up==0){if(time<9){orgtime++;}delay_ms(500);time=orgtime;}
+     if(down==0){if(time>1){orgtime--;}delay_ms(500);time=orgtime;}   

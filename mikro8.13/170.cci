@@ -1,0 +1,13 @@
+VERSION:3 SOURCE_TIMESTAMP:599CA952
+NODE:I LEVEL:0 LINE:1 "C:\cvavr\inc\mega16.h"
+NODE:I LEVEL:0 LINE:2 "C:\cvavr\inc\delay.h"
+NODE:I LEVEL:0 LINE:3 "C:\cvavr\inc\alcd.h"
+NODE:I LEVEL:0 LINE:4 "C:\cvavr\inc\stdio.h"
+NODE:M LEVEL:0 LINE:5 "Start"
+NODE:M LEVEL:0 LINE:6 "Stop"
+NODE:M LEVEL:0 LINE:7 "Reset"
+NODE:V LEVEL:0 LINE:8 "a -> R4,R5"
+NODE:V LEVEL:0 LINE:9 "b -> R6,R7"
+NODE:V LEVEL:0 LINE:10 "c -> R8,R9"
+NODE:V LEVEL:0 LINE:11 "str -> RAM:????"
+NODE:F LEVEL:0 LINE:13 "main(void)"
