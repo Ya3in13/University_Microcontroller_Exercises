@@ -4,7 +4,7 @@
 #define key_rast  PINB.3
 #define key_chap  PINB.2
 #define key_bala  PINB.0
-#define key_paen  PINB.1                                               
+#define key_paen  PINB.1
  char g,amteaz=0,gaez_x=5,gaez_y=3,i;
 unsigned char xx[10];
 unsigned char yy[10];
@@ -156,7 +156,7 @@ lcd_init(20);         }
             lcd_gotoxy(xx[i],yy[i]);
             lcd_putsf("&");i++;
         }
-        delay_ms(80);
+        delay_ms(200);
         lcd_clear();
            
     }   

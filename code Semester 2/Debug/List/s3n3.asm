@@ -1613,8 +1613,8 @@ _0x23:
 ; 0000 009E         }
 	RJMP _0x23
 _0x24:
-; 0000 009F         delay_ms(80);
-	LDI  R26,LOW(80)
+; 0000 009F         delay_ms(200);
+	LDI  R26,LOW(200)
 	LDI  R27,0
 	CALL _delay_ms
 ; 0000 00A0         lcd_clear();

@@ -1,14 +1,14 @@
 
-AVRASM ver. 2.1.30  C:\cvavr\BIN\Debug\List\s3n3.asm Wed May 07 16:19:54 2025
+AVRASM ver. 2.1.30  C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s3n3.asm Sat May 10 19:15:57 2025
 
-C:\cvavr\BIN\Debug\List\s3n3.asm(1088): warning: Register r5 already defined by the .DEF directive
-C:\cvavr\BIN\Debug\List\s3n3.asm(1089): warning: Register r4 already defined by the .DEF directive
-C:\cvavr\BIN\Debug\List\s3n3.asm(1090): warning: Register r7 already defined by the .DEF directive
-C:\cvavr\BIN\Debug\List\s3n3.asm(1091): warning: Register r6 already defined by the .DEF directive
-C:\cvavr\BIN\Debug\List\s3n3.asm(1092): warning: Register r9 already defined by the .DEF directive
-C:\cvavr\BIN\Debug\List\s3n3.asm(1093): warning: Register r8 already defined by the .DEF directive
-C:\cvavr\BIN\Debug\List\s3n3.asm(1094): warning: Register r11 already defined by the .DEF directive
-C:\cvavr\BIN\Debug\List\s3n3.asm(1095): warning: Register r10 already defined by the .DEF directive
+C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s3n3.asm(1088): warning: Register r5 already defined by the .DEF directive
+C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s3n3.asm(1089): warning: Register r4 already defined by the .DEF directive
+C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s3n3.asm(1090): warning: Register r7 already defined by the .DEF directive
+C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s3n3.asm(1091): warning: Register r6 already defined by the .DEF directive
+C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s3n3.asm(1092): warning: Register r9 already defined by the .DEF directive
+C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s3n3.asm(1093): warning: Register r8 already defined by the .DEF directive
+C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s3n3.asm(1094): warning: Register r11 already defined by the .DEF directive
+C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s3n3.asm(1095): warning: Register r10 already defined by the .DEF directive
                  
                  
                  ;CodeVisionAVR C Compiler V3.14 Advanced
@@ -1639,8 +1639,8 @@ C:\cvavr\BIN\Debug\List\s3n3.asm(1095): warning: Register r10 already defined by
                  ; 0000 009E         }
 000136 cfe7      	RJMP _0x23
                  _0x24:
-                 ; 0000 009F         delay_ms(80);
-000137 e5a0      	LDI  R26,LOW(80)
+                 ; 0000 009F         delay_ms(200);
+000137 eca8      	LDI  R26,LOW(200)
 000138 e0b0      	LDI  R27,0
 000139 940e 01d4 	CALL _delay_ms
                  ; 0000 00A0         lcd_clear();

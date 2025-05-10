@@ -137,8 +137,8 @@ lcd_init(20);         }
             i--;}                    
         if(g==1){if(xx[0]==19)xx[0]=0; else xx[0]++;}
         if(g==2){if(xx[0]==0)xx[0]=19; else xx[0]--;};
-        if(g==3){if(yy[0]==0)yy[0]=3; else yy[0]--;};
-        if(g==4){if(yy[0]==3)yy[0]=0; else yy[0]++;}; 
+        if(g==3){if(yy[0]==0)yy[0]=3;  else yy[0]--;};
+        if(g==4){if(yy[0]==3)yy[0]=0;  else yy[0]++;}; 
 
         if(gaez_x==xx[0] && gaez_y==yy[0]){
             amteaz++;
@@ -156,7 +156,7 @@ lcd_init(20);         }
             lcd_gotoxy(xx[i],yy[i]);
             lcd_putsf("&");i++;
         }
-        delay_ms(80);
+        delay_ms(200);
         lcd_clear();
            
     }   
