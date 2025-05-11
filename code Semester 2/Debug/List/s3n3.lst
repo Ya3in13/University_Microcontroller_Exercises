@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.30  C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s3n3.asm Sun May 11 15:59:05 2025
+AVRASM ver. 2.1.30  C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s3n3.asm Sun May 11 16:00:44 2025
 
 C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s3n3.asm(1088): warning: Register r5 already defined by the .DEF directive
 C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s3n3.asm(1089): warning: Register r4 already defined by the .DEF directive
@@ -1254,7 +1254,7 @@ C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\
                  ;#define key_chap  PINB.2
                  ;#define key_bala  PINB.0
                  ;#define key_paen  PINB.1
-                 ; char g,amteaz=0,gaez_x=5,gaez_y=3,i;
+                 ;char g,amteaz=0,gaez_x=5,gaez_y=3,i;
                  ;unsigned char xx[10];
                  ;unsigned char yy[10];
                  ;void main(void){

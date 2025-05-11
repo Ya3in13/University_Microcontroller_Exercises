@@ -1237,7 +1237,7 @@ __GLOBAL_INI_END:
 ;#define key_chap  PINB.2
 ;#define key_bala  PINB.0
 ;#define key_paen  PINB.1
-; char g,amteaz=0,gaez_x=5,gaez_y=3,i;
+;char g,amteaz=0,gaez_x=5,gaez_y=3,i;
 ;unsigned char xx[10];
 ;unsigned char yy[10];
 ;void main(void){
