@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.30  C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s3n3.asm Sun May 11 15:26:07 2025
+AVRASM ver. 2.1.30  C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s3n3.asm Sun May 11 15:48:25 2025
 
 C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s3n3.asm(1088): warning: Register r5 already defined by the .DEF directive
 C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s3n3.asm(1089): warning: Register r4 already defined by the .DEF directive
@@ -1639,8 +1639,8 @@ C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\
                  ; 0000 009E         }
 000136 cfe7      	RJMP _0x23
                  _0x24:
-                 ; 0000 009F         delay_ms(200);
-000137 eca8      	LDI  R26,LOW(200)
+                 ; 0000 009F         delay_ms(100);
+000137 e6a4      	LDI  R26,LOW(100)
 000138 e0b0      	LDI  R27,0
 000139 940e 01d4 	CALL _delay_ms
                  ; 0000 00A0         lcd_clear();

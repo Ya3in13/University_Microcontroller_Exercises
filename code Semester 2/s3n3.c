@@ -156,7 +156,7 @@ lcd_init(20);         }
             lcd_gotoxy(xx[i],yy[i]);
             lcd_putsf("&");i++;
         }
-        delay_ms(200);
+        delay_ms(100);
         lcd_clear();
            
     }   
