@@ -2,27 +2,21 @@
 #include <delay.h>
 #include <alcd.h>
 #include <stdio.h>
-
-
 #define FIRST_ADC_INPUT 0
 #define LAST_ADC_INPUT 7
-
 #define ADC_VREF_TYPE ((0<<REFS1) | (0<<REFS0) | (0<<ADLAR))
-
 unsigned char line[20];
 unsigned int nam=0,t1,t2,vol;
 unsigned int temp[9];
 interrupt [ADC_INT] void adc_isr(void){
 temp[nam]=ADCW/2;
-
 ADMUX=nam;
 delay_us(10);
 ADCSRA|=(1<<ADSC);
 nam++;
 if (nam>7){nam=0;}
+temp[8]=temp[0];
 }
-
-
 void main(void){
 {
 // Declare your local variables here
@@ -147,14 +141,19 @@ lcd_init(20);
 
 // Global enable interrupts
 #asm("sei")     }
-
     while (1){
         lcd_gotoxy(0,0);
         sprintf(line,"T1=%-2dT2=%-2dT3=%-2dT4=%-2d",temp[1],temp[2],temp[3],temp[4]);
         lcd_puts(line);
         
         lcd_gotoxy(0,1);
-        sprintf(line,"T5=%-2dT6=%-2dT7=%-2dT8=%-2d",temp[5],temp[6],temp[7],temp[0]);
-        lcd_puts(line); 
+        sprintf(line,"T5=%-2dT6=%-2dT7=%-2dT8=%-2d",temp[5],temp[6],temp[7],temp[8]);
+        lcd_puts(line);            
+        
     }
 }
+
+
+
+
+

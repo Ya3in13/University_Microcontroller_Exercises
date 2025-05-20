@@ -119,8 +119,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1521777649
-Build=34
+COFFileTimeStamp=1521777779
+Build=35
 [DefinedSymbolsDebug]
 Count=0
 [Compiler]
@@ -222,7 +222,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=34
+Build=35
 [DefinedSymbols]
 Count=0
 [CompilerAdvanced]
@@ -338,8 +338,8 @@ L13=Enhanced function parameters passing: Yes
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 34
-L18=11036 line(s) compiled
+L17=Build: 35
+L18=11038 line(s) compiled
 L19=No errors
 L20=3 warning(s)
 L21=
@@ -358,19 +358,19 @@ L33=
 L34=Heap size: 0 byte(s)
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 1008 words (2016 bytes), 12.3% of FLASH
-L38=55 words (110 bytes), 5.2% reduced by Code Compression
+L37=Program size: 1016 words (2032 bytes), 12.4% of FLASH
+L38=55 words (110 bytes), 5.1% reduced by Code Compression
 Lines=38
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s4n1.asm(2410): No EEPROM data, deleting C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\Exe\s4n1.eep
+L4=C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s4n1.asm(2414): No EEPROM data, deleting C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\Exe\s4n1.eep
 L5=
 L6=ATmega16 memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x0007e0   1922     94   2016   16384  12.3%
+L9=[.cseg] 0x000000 0x0007f0   1938     94   2032   16384  12.4%
 L10=[.dseg] 0x000060 0x00018b      0     43     43    1024   4.2%
 L11=[.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 L12=

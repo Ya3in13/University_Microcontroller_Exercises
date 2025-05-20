@@ -20,6 +20,7 @@ delay_us(10);
 ADCSRA|=(1<<ADSC);
 nam++;
 if (nam>7){nam=0;}
+temp[8]=temp[0];
 }
 
 
@@ -154,8 +155,8 @@ lcd_init(20);
         lcd_puts(line);
         
         lcd_gotoxy(0,1);
-        sprintf(line,"T5=%-2dT6=%-2dT7=%-2dT8=%-2d",temp[5],temp[6],temp[7],temp[0]);
-        lcd_puts(line);
-        delay_ms(100); 
+        sprintf(line,"T5=%-2dT6=%-2dT7=%-2dT8=%-2d",temp[5],temp[6],temp[7],temp[8]);
+        lcd_puts(line);            
+        
     }
 }
