@@ -9,11 +9,12 @@
 
 #define ADC_VREF_TYPE ((0<<REFS1) | (0<<REFS0) | (0<<ADLAR))
 
-unsigned char line[16];
+unsigned char line[20];
 unsigned int nam=0,t1,t2,vol;
-unsigned int temp[8];
+unsigned int temp[9];
 interrupt [ADC_INT] void adc_isr(void){
-temp[nam]=ADCW;
+temp[nam]=ADCW/2;
+
 ADMUX=nam;
 delay_us(10);
 ADCSRA|=(1<<ADSC);
@@ -142,14 +143,18 @@ TWCR=(0<<TWEA) | (0<<TWSTA) | (0<<TWSTO) | (0<<TWEN) | (0<<TWIE);
 // D6 - PORTC Bit 6
 // D7 - PORTC Bit 7
 // Characters/line: 16
-lcd_init(16);
+lcd_init(20);
 
 // Global enable interrupts
 #asm("sei")     }
 
     while (1){
         lcd_gotoxy(0,0);
-        sprintf(line,"t1=%2dt2=%2dt3=%2d",temp[0],temp[1],temp[2]);
+        sprintf(line,"T1=%-2dT2=%-2dT3=%-2dT4=%-2d",temp[1],temp[2],temp[3],temp[4]);
+        lcd_puts(line);
+        
+        lcd_gotoxy(0,1);
+        sprintf(line,"T5=%-2dT6=%-2dT7=%-2dT8=%-2d",temp[5],temp[6],temp[7],temp[0]);
         lcd_puts(line); 
     }
 }

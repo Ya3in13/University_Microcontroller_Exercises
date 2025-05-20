@@ -1,10 +1,10 @@
 RAM Allocation [bytes]
 Variable                                                                          Address   Size
 ------------------------------------------------------------------------------------------------
-line                                                                              0x0160      16
-temp                                                                              0x0170      16
-_base_y                                                                           0x0180       4
-_lcd_maxx                                                                         0x0184       1
+line                                                                              0x0160      20
+temp                                                                              0x0174      18
+_base_y                                                                           0x0186       4
+_lcd_maxx                                                                         0x018A       1
 
 EEPROM Allocation [bytes]
 Variable                                                                          Address   Size
@@ -23,17 +23,17 @@ _lcd_y                                                                          
 FLASH Allocation [words]
 Function                                                                          Address   Size
 ------------------------------------------------------------------------------------------------
-adc_isr                                                                           0x00073     41
-main                                                                              0x0009C     82
-_lcd_write_nibble_G100                                                            0x000EE     20
-_lcd_write_data                                                                   0x00102     12
-lcd_gotoxy                                                                        0x0010E     13
-lcd_clear                                                                         0x0011B     12
-lcd_putchar                                                                       0x00127     23
-lcd_puts                                                                          0x0013E     17
-lcd_init                                                                          0x0014F     47
-put_buff_G101                                                                     0x0017E     64
-_print_G101                                                                       0x001BE    308
-sprintf                                                                           0x002F2     52
-strlen                                                                            0x00326     12
-strlenf                                                                           0x00332     13
+adc_isr                                                                           0x00086     43
+main                                                                              0x000B1    115
+_lcd_write_nibble_G100                                                            0x00124     20
+_lcd_write_data                                                                   0x00138     12
+lcd_gotoxy                                                                        0x00144     13
+lcd_clear                                                                         0x00151     12
+lcd_putchar                                                                       0x0015D     23
+lcd_puts                                                                          0x00174     17
+lcd_init                                                                          0x00185     47
+put_buff_G101                                                                     0x001B4     64
+_print_G101                                                                       0x001F4    308
+sprintf                                                                           0x00328     52
+strlen                                                                            0x0035C     12
+strlenf                                                                           0x00368     13
