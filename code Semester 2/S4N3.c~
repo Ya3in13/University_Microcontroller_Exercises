@@ -146,26 +146,29 @@ lcd_init(20);
 #asm("sei")                            }
 
     while(1){
-        if(!PINA.2)ste=1;
-        if(!PINA.3)ste=0;
-        akh =t1-t2; 
+        if(!PINA.2){ste=1;PORTD.2=1;lcd_gotoxy(3,1);lcd_putsf("System ON ");}
+        if(!PINA.3){ste=0;PORTD.2=0;lcd_gotoxy(3,1);lcd_putsf("System OFF ");}
         t1=adc_data[0]/2;
-        t2=16+adc_data[1]/64;
+        t2=16+adc_data[1]/64; 
+        akh =t1-t2;
         if(ste){
-            if(akh>3){
-            PORTD.0=1;
+            if(akh>50){
+            PORTD.0=0;
             PORTD.1=0;
             }else if(akh<3){
             PORTD.0=0;
-            PORTD.1=1;}
+            PORTD.1=1;
+            }else if(akh>3){
+            PORTD.0=1;
+            PORTD.1=0;}
         }else{
             PORTD.0=0;
             PORTD.1=0;}
             
         lcd_gotoxy(0,0);
-        sprintf(line,"T0=%-3dT1=%-3dst=%d%3d", t1,t2,ste,akh);
+        sprintf(line,"Temp=%-3dSET=%-3dst=%d%3d", t1,t2,ste,akh);
         lcd_puts(line);
-        
+
       
       }      
 }
