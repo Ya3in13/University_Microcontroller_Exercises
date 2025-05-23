@@ -1,35 +1,26 @@
 #include <mega16.h>
-
 #include <delay.h>
 #include <alcd.h>
 #include <stdio.h>
-
-// Declare your global variables here
-
 #define FIRST_ADC_INPUT 0
 #define LAST_ADC_INPUT 1
-unsigned int adc_data[LAST_ADC_INPUT-FIRST_ADC_INPUT+1];
+unsigned int adc_data[LAST_ADC_INPUT-FIRST_ADC_INPUT+1],t1,t2,akh;
 unsigned char line[20];
+bit ste;
 #define ADC_VREF_TYPE ((0<<REFS1) | (0<<REFS0) | (0<<ADLAR))
 
-// ADC interrupt service routine
-// with auto input scanning
-interrupt [ADC_INT] void adc_isr(void)
-{
+
+interrupt [ADC_INT] void adc_isr(void){
 static unsigned char input_index=0;
-// Read the AD conversion result
 adc_data[input_index]=ADCW;
-// Select next ADC input
 if (++input_index > (LAST_ADC_INPUT-FIRST_ADC_INPUT))
    input_index=0;
 ADMUX=(FIRST_ADC_INPUT | ADC_VREF_TYPE)+input_index;
-// Delay needed for the stabilization of the ADC input voltage
 delay_us(10);
-// Start the AD conversion
 ADCSRA|=(1<<ADSC);
 }
 
-void main(void)
+void main(void) {
 {
 // Declare your local variables here
 
@@ -38,7 +29,7 @@ void main(void)
 // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=In Bit2=In Bit1=In Bit0=In 
 DDRA=(0<<DDA7) | (0<<DDA6) | (0<<DDA5) | (0<<DDA4) | (0<<DDA3) | (0<<DDA2) | (0<<DDA1) | (0<<DDA0);
 // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=T Bit2=T Bit1=T Bit0=T 
-PORTA=(0<<PORTA7) | (0<<PORTA6) | (0<<PORTA5) | (0<<PORTA4) | (0<<PORTA3) | (0<<PORTA2) | (0<<PORTA1) | (0<<PORTA0);
+PORTA=(1<<PORTA7) | (1<<PORTA6) | (1<<PORTA5) | (1<<PORTA4) | (1<<PORTA3) | (1<<PORTA2) | (1<<PORTA1) | (0<<PORTA0);
 
 // Port B initialization
 // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=In Bit2=In Bit1=In Bit0=In 
@@ -152,15 +143,29 @@ TWCR=(0<<TWEA) | (0<<TWSTA) | (0<<TWSTO) | (0<<TWEN) | (0<<TWIE);
 lcd_init(20);
 
 // Global enable interrupts
-#asm("sei")
+#asm("sei")                            }
 
-while (1)
-      {
-
-
-      lcd_gotoxy(0,0);
-      sprintf(line,"T1=%-5d",adc_data[1]);
-      lcd_puts(line);         
-
-      }
+    while(1){
+        if(!PINA.2)ste=1;
+        if(!PINA.3)ste=0;
+        akh =t1-t2; 
+        t1=adc_data[0]/2;
+        t2=16+adc_data[1]/64;
+        if(ste){
+            if(akh>3){
+            PORTD.0=1;
+            PORTD.1=0;
+            }else if(akh<3){
+            PORTD.0=0;
+            PORTD.1=1;}
+        }else{
+            PORTD.0=0;
+            PORTD.1=0;}
+            
+        lcd_gotoxy(0,0);
+        sprintf(line,"T0=%-3dT1=%-3dst=%d%3d", t1,t2,ste,akh);
+        lcd_puts(line);
+        
+      
+      }      
 }
