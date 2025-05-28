@@ -166,7 +166,7 @@ lcd_init(20);
             PORTD.1=0;}
             
         lcd_gotoxy(0,0);
-        sprintf(line,"Temp=%-3dSET=%-3dst=%d%3d", t1,t2,ste,akh);
+        sprintf(line,"Temp=%-3dSET=%-3d", t1,t2);
         lcd_puts(line);
 
       

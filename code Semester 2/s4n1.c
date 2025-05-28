@@ -9,14 +9,14 @@ unsigned char line[20];
 unsigned int nam=0,t1,t2,vol;
 unsigned int temp[9];
 interrupt [ADC_INT] void adc_isr(void){
-temp[nam]=ADCW/2;
-ADMUX=nam;
-delay_us(10);
-ADCSRA|=(1<<ADSC);
-nam++;
-if (nam>7){nam=0;}
-temp[8]=temp[0];
-}
+    temp[nam]=ADCW/2;
+    ADMUX=nam;
+    delay_us(10);
+    ADCSRA|=(1<<ADSC);
+    nam++;
+    if (nam>7){nam=0;}
+    temp[8]=temp[0];
+    }
 void main(void){
 {
 // Declare your local variables here

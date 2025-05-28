@@ -8,18 +8,15 @@ unsigned int adc_data[LAST_ADC_INPUT-FIRST_ADC_INPUT+1],t1,t2,akh;
 unsigned char line[20];
 bit ste;
 #define ADC_VREF_TYPE ((0<<REFS1) | (0<<REFS0) | (0<<ADLAR))
-
-
 interrupt [ADC_INT] void adc_isr(void){
-static unsigned char input_index=0;
-adc_data[input_index]=ADCW;
-if (++input_index > (LAST_ADC_INPUT-FIRST_ADC_INPUT))
-   input_index=0;
-ADMUX=(FIRST_ADC_INPUT | ADC_VREF_TYPE)+input_index;
-delay_us(10);
-ADCSRA|=(1<<ADSC);
-}
-
+    static unsigned char input_index=0;
+    adc_data[input_index]=ADCW;
+    if (++input_index > (LAST_ADC_INPUT-FIRST_ADC_INPUT))
+       input_index=0;
+    ADMUX=(FIRST_ADC_INPUT | ADC_VREF_TYPE)+input_index;
+    delay_us(10);
+    ADCSRA|=(1<<ADSC);
+    }
 void main(void) {
 {
 // Declare your local variables here
