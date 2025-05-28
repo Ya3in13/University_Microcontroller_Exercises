@@ -1,13 +1,15 @@
 #include <mega16.h>
 
-
-unsigned int cnt1,cnt2,cnt3,cnt4,cnt5;
+bit ki,state=1;
+unsigned int cnt1,cnt2,cnt3,cnt4,cnt5,cntki;
 interrupt [TIM1_OVF] void timer1_ovf_isr(void){
     TCNT1=-1000;   
     if(++cnt3>220){PORTB.0=!PORTB.0;cnt3=0;}
     if(++cnt4>670){PORTB.1=!PORTB.1;cnt4=0;}
     if(++cnt5>1600){PORTB.2=!PORTB.2;cnt5=0;}
-    if(++cnt1>50){cnt2++;cnt1=0;}
+    if(++cnt1>50){cnt2++;cnt1=0;} 
+    if(ki){cntki++;} 
+    
 }
 void main(void){
     {
@@ -119,6 +121,18 @@ void main(void){
     // Global enable interrupts
     #asm("sei")    }
     while(1){
+        if(!PIND.7)ki=1;
+            else{ki=0;
+            if(cntki<1000&&cntki>50&&state){
+                PORTD.0=!PORTD.0;
+                cntki=0;
+            }else if(cntki>1000){
+                state=!state;
+                PORTD.1=!PORTD.1;
+                cntki=0;
+            }          
+        }
+        /*----------------------------------------------------------(led)--------------------------------------------------------------------*/
         if(cnt2==1)PORTA=0B00000001;
         if(cnt2==2)PORTA=0B00000010;
         if(cnt2==3)PORTA=0B00000100;
@@ -148,7 +162,6 @@ void main(void){
         if(cnt2==25)PORTA=0B01000100;
         if(cnt2==26)PORTA=0B00010001;
         if(cnt2==27)PORTA=0x00;
-        if(cnt2==27)cnt2=0;     
-
+        if(cnt2==27)cnt2=0;                                           
         }
 }

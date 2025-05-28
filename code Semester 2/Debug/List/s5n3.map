@@ -1,6 +1,7 @@
 RAM Allocation [bytes]
 Variable                                                                          Address   Size
 ------------------------------------------------------------------------------------------------
+cntki                                                                             0x0160       2
 
 EEPROM Allocation [bytes]
 Variable                                                                          Address   Size
@@ -9,6 +10,8 @@ Variable                                                                        
 Register Allocation
 Variable                                                                          Register  Size
 ------------------------------------------------------------------------------------------------
+ki                                                                                R2.0      1bit
+state                                                                             R2.1      1bit
 cnt1                                                                              R4,R5        2
 cnt2                                                                              R6,R7        2
 cnt3                                                                              R8,R9        2
@@ -18,5 +21,5 @@ cnt5                                                                            
 FLASH Allocation [words]
 Function                                                                          Address   Size
 ------------------------------------------------------------------------------------------------
-timer1_ovf_isr                                                                    0x00045     68
-main                                                                              0x00089    244
+timer1_ovf_isr                                                                    0x0005C     79
+main                                                                              0x000AB    285
