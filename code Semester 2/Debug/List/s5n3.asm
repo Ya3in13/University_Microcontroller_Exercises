@@ -1125,6 +1125,7 @@ __START_OF_CODE:
 	JMP  0x00
 	JMP  0x00
 
+<<<<<<< Updated upstream
 ;REGISTER BIT VARIABLES INITIALIZATION
 __REG_BIT_VARS:
 	.DW  0x0002
@@ -1140,6 +1141,8 @@ _0xFFFFFFFF:
 
 #define __GLOBAL_INI_TBL_PRESENT 1
 
+=======
+>>>>>>> Stashed changes
 __RESET:
 	CLI
 	CLR  R30
@@ -1170,6 +1173,7 @@ __CLEAR_SRAM:
 	SBIW R24,1
 	BRNE __CLEAR_SRAM
 
+<<<<<<< Updated upstream
 ;GLOBAL VARIABLES INITIALIZATION
 	LDI  R30,LOW(__GLOBAL_INI_TBL*2)
 	LDI  R31,HIGH(__GLOBAL_INI_TBL*2)
@@ -1193,6 +1197,8 @@ __GLOBAL_INI_LOOP:
 	RJMP __GLOBAL_INI_NEXT
 __GLOBAL_INI_END:
 
+=======
+>>>>>>> Stashed changes
 ;HARDWARE STACK POINTER INITIALIZATION
 	LDI  R30,LOW(__SRAM_END-__HEAP_SIZE)
 	OUT  SPL,R30
@@ -1225,8 +1231,13 @@ __GLOBAL_INI_END:
 	.SET power_ctrl_reg=mcucr
 	#endif
 ;
+<<<<<<< Updated upstream
 ;bit ki,state=1;
 ;unsigned int cnt1,cnt2,cnt3,cnt4,cnt5,cntki;
+=======
+;
+;unsigned int cnt1,cnt2,cnt3,cnt4,cnt5;
+>>>>>>> Stashed changes
 ;interrupt [TIM1_OVF] void timer1_ovf_isr(void){
 ; 0000 0005 interrupt [9] void timer1_ovf_isr(void){
 
@@ -1234,7 +1245,10 @@ __GLOBAL_INI_END:
 _timer1_ovf_isr:
 ; .FSTART _timer1_ovf_isr
 	ST   -Y,R26
+<<<<<<< Updated upstream
 	ST   -Y,R27
+=======
+>>>>>>> Stashed changes
 	ST   -Y,R30
 	ST   -Y,R31
 	IN   R30,SREG
@@ -1310,6 +1324,7 @@ _0x9:
 	SBIW R30,1
 	CLR  R4
 	CLR  R5
+<<<<<<< Updated upstream
 ; 0000 000B     if(ki){cntki++;}
 _0xC:
 	SBRS R2,0
@@ -1324,15 +1339,23 @@ _0xC:
 ; 0000 000C 
 ; 0000 000D }
 _0xD:
+=======
+; 0000 000B }
+_0xC:
+>>>>>>> Stashed changes
 	LD   R30,Y+
 	OUT  SREG,R30
 	LD   R31,Y+
 	LD   R30,Y+
+<<<<<<< Updated upstream
 	LD   R27,Y+
+=======
+>>>>>>> Stashed changes
 	LD   R26,Y+
 	RETI
 ; .FEND
 ;void main(void){
+<<<<<<< Updated upstream
 ; 0000 000E void main(void){
 _main:
 ; .FSTART _main
@@ -1557,26 +1580,205 @@ _0x19:
 _0x12:
 ; 0000 0087         /*----------------------------------------------------------(led)----------------------------------------------- ...
 ; 0000 0088         if(cnt2==1)PORTA=0B00000001;
+=======
+; 0000 000C void main(void){
+_main:
+; .FSTART _main
+; 0000 000D     {
+; 0000 000E     // Declare your local variables here
+; 0000 000F 
+; 0000 0010     // Input/Output Ports initialization
+; 0000 0011     // Port A initialization
+; 0000 0012     // Function: Bit7=Out Bit6=Out Bit5=Out Bit4=Out Bit3=Out Bit2=Out Bit1=Out Bit0=Out
+; 0000 0013     DDRA=(1<<DDA7) | (1<<DDA6) | (1<<DDA5) | (1<<DDA4) | (1<<DDA3) | (1<<DDA2) | (1<<DDA1) | (1<<DDA0);
+	LDI  R30,LOW(255)
+	OUT  0x1A,R30
+; 0000 0014     // State: Bit7=0 Bit6=0 Bit5=0 Bit4=0 Bit3=0 Bit2=0 Bit1=0 Bit0=0
+; 0000 0015     PORTA=(0<<PORTA7) | (0<<PORTA6) | (0<<PORTA5) | (0<<PORTA4) | (0<<PORTA3) | (0<<PORTA2) | (0<<PORTA1) | (0<<PORTA0);
+	LDI  R30,LOW(0)
+	OUT  0x1B,R30
+; 0000 0016 
+; 0000 0017     // Port B initialization
+; 0000 0018     // Function: Bit7=Out Bit6=Out Bit5=Out Bit4=Out Bit3=Out Bit2=Out Bit1=Out Bit0=Out
+; 0000 0019     DDRB=(1<<DDB7) | (1<<DDB6) | (1<<DDB5) | (1<<DDB4) | (1<<DDB3) | (1<<DDB2) | (1<<DDB1) | (1<<DDB0);
+	LDI  R30,LOW(255)
+	OUT  0x17,R30
+; 0000 001A     // State: Bit7=0 Bit6=0 Bit5=0 Bit4=0 Bit3=0 Bit2=0 Bit1=0 Bit0=0
+; 0000 001B     PORTB=(0<<PORTB7) | (0<<PORTB6) | (0<<PORTB5) | (0<<PORTB4) | (0<<PORTB3) | (0<<PORTB2) | (0<<PORTB1) | (0<<PORTB0);
+	LDI  R30,LOW(0)
+	OUT  0x18,R30
+; 0000 001C 
+; 0000 001D     // Port C initialization
+; 0000 001E     // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=In Bit2=In Bit1=In Bit0=In
+; 0000 001F     DDRC=(0<<DDC7) | (0<<DDC6) | (0<<DDC5) | (0<<DDC4) | (0<<DDC3) | (0<<DDC2) | (0<<DDC1) | (0<<DDC0);
+	OUT  0x14,R30
+; 0000 0020     // State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=T Bit2=T Bit1=T Bit0=T
+; 0000 0021     PORTC=(0<<PORTC7) | (0<<PORTC6) | (0<<PORTC5) | (0<<PORTC4) | (0<<PORTC3) | (0<<PORTC2) | (0<<PORTC1) | (0<<PORTC0);
+	OUT  0x15,R30
+; 0000 0022 
+; 0000 0023     // Port D initialization
+; 0000 0024     // Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=Out Bit2=Out Bit1=Out Bit0=Out
+; 0000 0025     DDRD=(0<<DDD7) | (0<<DDD6) | (0<<DDD5) | (0<<DDD4) | (1<<DDD3) | (1<<DDD2) | (1<<DDD1) | (1<<DDD0);
+	LDI  R30,LOW(15)
+	OUT  0x11,R30
+; 0000 0026     // State: Bit7=P Bit6=P Bit5=P Bit4=P Bit3=0 Bit2=0 Bit1=0 Bit0=0
+; 0000 0027     PORTD=(1<<PORTD7) | (1<<PORTD6) | (1<<PORTD5) | (1<<PORTD4) | (0<<PORTD3) | (0<<PORTD2) | (0<<PORTD1) | (0<<PORTD0);
+	LDI  R30,LOW(240)
+	OUT  0x12,R30
+; 0000 0028 
+; 0000 0029     // Timer/Counter 0 initialization
+; 0000 002A     // Clock source: System Clock
+; 0000 002B     // Clock value: Timer 0 Stopped
+; 0000 002C     // Mode: Normal top=0xFF
+; 0000 002D     // OC0 output: Disconnected
+; 0000 002E     TCCR0=(0<<WGM00) | (0<<COM01) | (0<<COM00) | (0<<WGM01) | (0<<CS02) | (0<<CS01) | (0<<CS00);
+	LDI  R30,LOW(0)
+	OUT  0x33,R30
+; 0000 002F     TCNT0=0x00;
+	OUT  0x32,R30
+; 0000 0030     OCR0=0x00;
+	OUT  0x3C,R30
+; 0000 0031 
+; 0000 0032     // Timer/Counter 1 initialization
+; 0000 0033     // Clock source: System Clock
+; 0000 0034     // Clock value: 1000.000 kHz
+; 0000 0035     // Mode: Normal top=0xFFFF
+; 0000 0036     // OC1A output: Disconnected
+; 0000 0037     // OC1B output: Disconnected
+; 0000 0038     // Noise Canceler: Off
+; 0000 0039     // Input Capture on Falling Edge
+; 0000 003A     // Timer Period: 65.536 ms
+; 0000 003B     // Timer1 Overflow Interrupt: On
+; 0000 003C     // Input Capture Interrupt: Off
+; 0000 003D     // Compare A Match Interrupt: Off
+; 0000 003E     // Compare B Match Interrupt: Off
+; 0000 003F     TCCR1A=(0<<COM1A1) | (0<<COM1A0) | (0<<COM1B1) | (0<<COM1B0) | (0<<WGM11) | (0<<WGM10);
+	OUT  0x2F,R30
+; 0000 0040     TCCR1B=(0<<ICNC1) | (0<<ICES1) | (0<<WGM13) | (0<<WGM12) | (0<<CS12) | (1<<CS11) | (0<<CS10);
+	LDI  R30,LOW(2)
+	OUT  0x2E,R30
+; 0000 0041     TCNT1H=0x00;
+	LDI  R30,LOW(0)
+	OUT  0x2D,R30
+; 0000 0042     TCNT1L=0x00;
+	OUT  0x2C,R30
+; 0000 0043     ICR1H=0x00;
+	OUT  0x27,R30
+; 0000 0044     ICR1L=0x00;
+	OUT  0x26,R30
+; 0000 0045     OCR1AH=0x00;
+	OUT  0x2B,R30
+; 0000 0046     OCR1AL=0x00;
+	OUT  0x2A,R30
+; 0000 0047     OCR1BH=0x00;
+	OUT  0x29,R30
+; 0000 0048     OCR1BL=0x00;
+	OUT  0x28,R30
+; 0000 0049 
+; 0000 004A     // Timer/Counter 2 initialization
+; 0000 004B     // Clock source: System Clock
+; 0000 004C     // Clock value: Timer2 Stopped
+; 0000 004D     // Mode: Normal top=0xFF
+; 0000 004E     // OC2 output: Disconnected
+; 0000 004F     ASSR=0<<AS2;
+	OUT  0x22,R30
+; 0000 0050     TCCR2=(0<<PWM2) | (0<<COM21) | (0<<COM20) | (0<<CTC2) | (0<<CS22) | (0<<CS21) | (0<<CS20);
+	OUT  0x25,R30
+; 0000 0051     TCNT2=0x00;
+	OUT  0x24,R30
+; 0000 0052     OCR2=0x00;
+	OUT  0x23,R30
+; 0000 0053 
+; 0000 0054     // Timer(s)/Counter(s) Interrupt(s) initialization
+; 0000 0055     TIMSK=(0<<OCIE2) | (0<<TOIE2) | (0<<TICIE1) | (0<<OCIE1A) | (0<<OCIE1B) | (1<<TOIE1) | (0<<OCIE0) | (0<<TOIE0);
+	LDI  R30,LOW(4)
+	OUT  0x39,R30
+; 0000 0056 
+; 0000 0057     // External Interrupt(s) initialization
+; 0000 0058     // INT0: Off
+; 0000 0059     // INT1: Off
+; 0000 005A     // INT2: Off
+; 0000 005B     MCUCR=(0<<ISC11) | (0<<ISC10) | (0<<ISC01) | (0<<ISC00);
+	LDI  R30,LOW(0)
+	OUT  0x35,R30
+; 0000 005C     MCUCSR=(0<<ISC2);
+	OUT  0x34,R30
+; 0000 005D 
+; 0000 005E     // USART initialization
+; 0000 005F     // USART disabled
+; 0000 0060     UCSRB=(0<<RXCIE) | (0<<TXCIE) | (0<<UDRIE) | (0<<RXEN) | (0<<TXEN) | (0<<UCSZ2) | (0<<RXB8) | (0<<TXB8);
+	OUT  0xA,R30
+; 0000 0061 
+; 0000 0062     // Analog Comparator initialization
+; 0000 0063     // Analog Comparator: Off
+; 0000 0064     // The Analog Comparator's positive input is
+; 0000 0065     // connected to the AIN0 pin
+; 0000 0066     // The Analog Comparator's negative input is
+; 0000 0067     // connected to the AIN1 pin
+; 0000 0068     ACSR=(1<<ACD) | (0<<ACBG) | (0<<ACO) | (0<<ACI) | (0<<ACIE) | (0<<ACIC) | (0<<ACIS1) | (0<<ACIS0);
+	LDI  R30,LOW(128)
+	OUT  0x8,R30
+; 0000 0069     SFIOR=(0<<ACME);
+	LDI  R30,LOW(0)
+	OUT  0x30,R30
+; 0000 006A 
+; 0000 006B     // ADC initialization
+; 0000 006C     // ADC disabled
+; 0000 006D     ADCSRA=(0<<ADEN) | (0<<ADSC) | (0<<ADATE) | (0<<ADIF) | (0<<ADIE) | (0<<ADPS2) | (0<<ADPS1) | (0<<ADPS0);
+	OUT  0x6,R30
+; 0000 006E 
+; 0000 006F     // SPI initialization
+; 0000 0070     // SPI disabled
+; 0000 0071     SPCR=(0<<SPIE) | (0<<SPE) | (0<<DORD) | (0<<MSTR) | (0<<CPOL) | (0<<CPHA) | (0<<SPR1) | (0<<SPR0);
+	OUT  0xD,R30
+; 0000 0072 
+; 0000 0073     // TWI initialization
+; 0000 0074     // TWI disabled
+; 0000 0075     TWCR=(0<<TWEA) | (0<<TWSTA) | (0<<TWSTO) | (0<<TWEN) | (0<<TWIE);
+	OUT  0x36,R30
+; 0000 0076 
+; 0000 0077     // Global enable interrupts
+; 0000 0078     #asm("sei")    }
+	sei
+; 0000 0079     while(1){
+_0xD:
+; 0000 007A         if(cnt2==1)PORTA=0B00000001;
+>>>>>>> Stashed changes
 	LDI  R30,LOW(1)
 	LDI  R31,HIGH(1)
 	CP   R30,R6
 	CPC  R31,R7
+<<<<<<< Updated upstream
 	BRNE _0x1C
 	OUT  0x1B,R30
 ; 0000 0089         if(cnt2==2)PORTA=0B00000010;
 _0x1C:
+=======
+	BRNE _0x10
+	OUT  0x1B,R30
+; 0000 007B         if(cnt2==2)PORTA=0B00000010;
+_0x10:
+>>>>>>> Stashed changes
 	LDI  R30,LOW(2)
 	LDI  R31,HIGH(2)
 	CP   R30,R6
 	CPC  R31,R7
+<<<<<<< Updated upstream
 	BRNE _0x1D
 	OUT  0x1B,R30
 ; 0000 008A         if(cnt2==3)PORTA=0B00000100;
 _0x1D:
+=======
+	BRNE _0x11
+	OUT  0x1B,R30
+; 0000 007C         if(cnt2==3)PORTA=0B00000100;
+_0x11:
+>>>>>>> Stashed changes
 	LDI  R30,LOW(3)
 	LDI  R31,HIGH(3)
 	CP   R30,R6
 	CPC  R31,R7
+<<<<<<< Updated upstream
 	BRNE _0x1E
 	LDI  R30,LOW(4)
 	OUT  0x1B,R30
@@ -1691,119 +1893,333 @@ _0x29:
 	OUT  0x1B,R30
 ; 0000 0098         if(cnt2==16)PORTA=0B00000010;
 _0x2A:
+=======
+	BRNE _0x12
+	LDI  R30,LOW(4)
+	OUT  0x1B,R30
+; 0000 007D         if(cnt2==4)PORTA=0B00001000;
+_0x12:
+	LDI  R30,LOW(4)
+	LDI  R31,HIGH(4)
+	CP   R30,R6
+	CPC  R31,R7
+	BRNE _0x13
+	LDI  R30,LOW(8)
+	OUT  0x1B,R30
+; 0000 007E         if(cnt2==5)PORTA=0B00010000;
+_0x13:
+	LDI  R30,LOW(5)
+	LDI  R31,HIGH(5)
+	CP   R30,R6
+	CPC  R31,R7
+	BRNE _0x14
+	LDI  R30,LOW(16)
+	OUT  0x1B,R30
+; 0000 007F         if(cnt2==6)PORTA=0B00100000;
+_0x14:
+	LDI  R30,LOW(6)
+	LDI  R31,HIGH(6)
+	CP   R30,R6
+	CPC  R31,R7
+	BRNE _0x15
+	LDI  R30,LOW(32)
+	OUT  0x1B,R30
+; 0000 0080         if(cnt2==7)PORTA=0B01000000;
+_0x15:
+	LDI  R30,LOW(7)
+	LDI  R31,HIGH(7)
+	CP   R30,R6
+	CPC  R31,R7
+	BRNE _0x16
+	LDI  R30,LOW(64)
+	OUT  0x1B,R30
+; 0000 0081         if(cnt2==8)PORTA=0B10000000;
+_0x16:
+	LDI  R30,LOW(8)
+	LDI  R31,HIGH(8)
+	CP   R30,R6
+	CPC  R31,R7
+	BRNE _0x17
+	LDI  R30,LOW(128)
+	OUT  0x1B,R30
+; 0000 0082         if(cnt2==9)PORTA=0B00000000;
+_0x17:
+	LDI  R30,LOW(9)
+	LDI  R31,HIGH(9)
+	CP   R30,R6
+	CPC  R31,R7
+	BRNE _0x18
+	LDI  R30,LOW(0)
+	OUT  0x1B,R30
+; 0000 0083 
+; 0000 0084         if(cnt2==10)PORTA=0B10000000;
+_0x18:
+	LDI  R30,LOW(10)
+	LDI  R31,HIGH(10)
+	CP   R30,R6
+	CPC  R31,R7
+	BRNE _0x19
+	LDI  R30,LOW(128)
+	OUT  0x1B,R30
+; 0000 0085         if(cnt2==11)PORTA=0B01000000;
+_0x19:
+	LDI  R30,LOW(11)
+	LDI  R31,HIGH(11)
+	CP   R30,R6
+	CPC  R31,R7
+	BRNE _0x1A
+	LDI  R30,LOW(64)
+	OUT  0x1B,R30
+; 0000 0086         if(cnt2==12)PORTA=0B00100000;
+_0x1A:
+	LDI  R30,LOW(12)
+	LDI  R31,HIGH(12)
+	CP   R30,R6
+	CPC  R31,R7
+	BRNE _0x1B
+	LDI  R30,LOW(32)
+	OUT  0x1B,R30
+; 0000 0087         if(cnt2==13)PORTA=0B00010000;
+_0x1B:
+	LDI  R30,LOW(13)
+	LDI  R31,HIGH(13)
+	CP   R30,R6
+	CPC  R31,R7
+	BRNE _0x1C
+	LDI  R30,LOW(16)
+	OUT  0x1B,R30
+; 0000 0088         if(cnt2==14)PORTA=0B00001000;
+_0x1C:
+	LDI  R30,LOW(14)
+	LDI  R31,HIGH(14)
+	CP   R30,R6
+	CPC  R31,R7
+	BRNE _0x1D
+	LDI  R30,LOW(8)
+	OUT  0x1B,R30
+; 0000 0089         if(cnt2==15)PORTA=0B00000100;
+_0x1D:
+	LDI  R30,LOW(15)
+	LDI  R31,HIGH(15)
+	CP   R30,R6
+	CPC  R31,R7
+	BRNE _0x1E
+	LDI  R30,LOW(4)
+	OUT  0x1B,R30
+; 0000 008A         if(cnt2==16)PORTA=0B00000010;
+_0x1E:
+>>>>>>> Stashed changes
 	LDI  R30,LOW(16)
 	LDI  R31,HIGH(16)
 	CP   R30,R6
 	CPC  R31,R7
+<<<<<<< Updated upstream
 	BRNE _0x2B
 	LDI  R30,LOW(2)
 	OUT  0x1B,R30
 ; 0000 0099         if(cnt2==17)PORTA=0B00000001;
 _0x2B:
+=======
+	BRNE _0x1F
+	LDI  R30,LOW(2)
+	OUT  0x1B,R30
+; 0000 008B         if(cnt2==17)PORTA=0B00000001;
+_0x1F:
+>>>>>>> Stashed changes
 	LDI  R30,LOW(17)
 	LDI  R31,HIGH(17)
 	CP   R30,R6
 	CPC  R31,R7
+<<<<<<< Updated upstream
 	BRNE _0x2C
 	LDI  R30,LOW(1)
 	OUT  0x1B,R30
 ; 0000 009A         if(cnt2==18)PORTA=0B00000000;
 _0x2C:
+=======
+	BRNE _0x20
+	LDI  R30,LOW(1)
+	OUT  0x1B,R30
+; 0000 008C         if(cnt2==18)PORTA=0B00000000;
+_0x20:
+>>>>>>> Stashed changes
 	LDI  R30,LOW(18)
 	LDI  R31,HIGH(18)
 	CP   R30,R6
 	CPC  R31,R7
+<<<<<<< Updated upstream
 	BRNE _0x2D
 	LDI  R30,LOW(0)
 	OUT  0x1B,R30
 ; 0000 009B 
 ; 0000 009C         if(cnt2==19)PORTA=0B10001000;
 _0x2D:
+=======
+	BRNE _0x21
+	LDI  R30,LOW(0)
+	OUT  0x1B,R30
+; 0000 008D 
+; 0000 008E         if(cnt2==19)PORTA=0B10001000;
+_0x21:
+>>>>>>> Stashed changes
 	LDI  R30,LOW(19)
 	LDI  R31,HIGH(19)
 	CP   R30,R6
 	CPC  R31,R7
+<<<<<<< Updated upstream
 	BRNE _0x2E
 	LDI  R30,LOW(136)
 	OUT  0x1B,R30
 ; 0000 009D         if(cnt2==20)PORTA=0B00100010;
 _0x2E:
+=======
+	BRNE _0x22
+	LDI  R30,LOW(136)
+	OUT  0x1B,R30
+; 0000 008F         if(cnt2==20)PORTA=0B00100010;
+_0x22:
+>>>>>>> Stashed changes
 	LDI  R30,LOW(20)
 	LDI  R31,HIGH(20)
 	CP   R30,R6
 	CPC  R31,R7
+<<<<<<< Updated upstream
 	BRNE _0x2F
 	LDI  R30,LOW(34)
 	OUT  0x1B,R30
 ; 0000 009E         if(cnt2==21)PORTA=0B01000100;
 _0x2F:
+=======
+	BRNE _0x23
+	LDI  R30,LOW(34)
+	OUT  0x1B,R30
+; 0000 0090         if(cnt2==21)PORTA=0B01000100;
+_0x23:
+>>>>>>> Stashed changes
 	LDI  R30,LOW(21)
 	LDI  R31,HIGH(21)
 	CP   R30,R6
 	CPC  R31,R7
+<<<<<<< Updated upstream
 	BRNE _0x30
 	LDI  R30,LOW(68)
 	OUT  0x1B,R30
 ; 0000 009F         if(cnt2==22)PORTA=0B00010001;
 _0x30:
+=======
+	BRNE _0x24
+	LDI  R30,LOW(68)
+	OUT  0x1B,R30
+; 0000 0091         if(cnt2==22)PORTA=0B00010001;
+_0x24:
+>>>>>>> Stashed changes
 	LDI  R30,LOW(22)
 	LDI  R31,HIGH(22)
 	CP   R30,R6
 	CPC  R31,R7
+<<<<<<< Updated upstream
 	BRNE _0x31
 	LDI  R30,LOW(17)
 	OUT  0x1B,R30
 ; 0000 00A0         if(cnt2==23)PORTA=0B10001000;
 _0x31:
+=======
+	BRNE _0x25
+	LDI  R30,LOW(17)
+	OUT  0x1B,R30
+; 0000 0092         if(cnt2==23)PORTA=0B10001000;
+_0x25:
+>>>>>>> Stashed changes
 	LDI  R30,LOW(23)
 	LDI  R31,HIGH(23)
 	CP   R30,R6
 	CPC  R31,R7
+<<<<<<< Updated upstream
 	BRNE _0x32
 	LDI  R30,LOW(136)
 	OUT  0x1B,R30
 ; 0000 00A1         if(cnt2==24)PORTA=0B00100010;
 _0x32:
+=======
+	BRNE _0x26
+	LDI  R30,LOW(136)
+	OUT  0x1B,R30
+; 0000 0093         if(cnt2==24)PORTA=0B00100010;
+_0x26:
+>>>>>>> Stashed changes
 	LDI  R30,LOW(24)
 	LDI  R31,HIGH(24)
 	CP   R30,R6
 	CPC  R31,R7
+<<<<<<< Updated upstream
 	BRNE _0x33
 	LDI  R30,LOW(34)
 	OUT  0x1B,R30
 ; 0000 00A2         if(cnt2==25)PORTA=0B01000100;
 _0x33:
+=======
+	BRNE _0x27
+	LDI  R30,LOW(34)
+	OUT  0x1B,R30
+; 0000 0094         if(cnt2==25)PORTA=0B01000100;
+_0x27:
+>>>>>>> Stashed changes
 	LDI  R30,LOW(25)
 	LDI  R31,HIGH(25)
 	CP   R30,R6
 	CPC  R31,R7
+<<<<<<< Updated upstream
 	BRNE _0x34
 	LDI  R30,LOW(68)
 	OUT  0x1B,R30
 ; 0000 00A3         if(cnt2==26)PORTA=0B00010001;
 _0x34:
+=======
+	BRNE _0x28
+	LDI  R30,LOW(68)
+	OUT  0x1B,R30
+; 0000 0095         if(cnt2==26)PORTA=0B00010001;
+_0x28:
+>>>>>>> Stashed changes
 	LDI  R30,LOW(26)
 	LDI  R31,HIGH(26)
 	CP   R30,R6
 	CPC  R31,R7
+<<<<<<< Updated upstream
 	BRNE _0x35
 	LDI  R30,LOW(17)
 	OUT  0x1B,R30
 ; 0000 00A4         if(cnt2==27)PORTA=0x00;
 _0x35:
+=======
+	BRNE _0x29
+	LDI  R30,LOW(17)
+	OUT  0x1B,R30
+; 0000 0096         if(cnt2==27)PORTA=0x00;
+_0x29:
+>>>>>>> Stashed changes
 	LDI  R30,LOW(27)
 	LDI  R31,HIGH(27)
 	CP   R30,R6
 	CPC  R31,R7
+<<<<<<< Updated upstream
 	BRNE _0x36
 	LDI  R30,LOW(0)
 	OUT  0x1B,R30
 ; 0000 00A5         if(cnt2==27)cnt2=0;
 _0x36:
+=======
+	BRNE _0x2A
+	LDI  R30,LOW(0)
+	OUT  0x1B,R30
+; 0000 0097         if(cnt2==27)cnt2=0;
+_0x2A:
+>>>>>>> Stashed changes
 	LDI  R30,LOW(27)
 	LDI  R31,HIGH(27)
 	CP   R30,R6
 	CPC  R31,R7
+<<<<<<< Updated upstream
 	BRNE _0x37
 	CLR  R6
 	CLR  R7
@@ -1826,6 +2242,21 @@ SUBOPT_0x0:
 	LDS  R27,_cntki+1
 	RET
 
+=======
+	BRNE _0x2B
+	CLR  R6
+	CLR  R7
+; 0000 0098 
+; 0000 0099         }
+_0x2B:
+	RJMP _0xD
+; 0000 009A }
+_0x2C:
+	RJMP _0x2C
+; .FEND
+
+	.CSEG
+>>>>>>> Stashed changes
 
 	.CSEG
 ;END OF CODE MARKER
