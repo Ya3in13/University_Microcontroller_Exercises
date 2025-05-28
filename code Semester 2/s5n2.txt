@@ -1,0 +1,6 @@
+unsigned int cnt1,cnt2,cnt3;
+interrupt [TIM1_OVF] void timer1_ovf_isr(void){
+    TCNT1=-1000;   
+    if(++cnt1>220){PORTD.0=!PORTD.0;cnt1=0;}
+    if(++cnt2>670){PORTD.1=!PORTD.1;cnt2=0;}
+    if(++cnt3>1600){PORTD.2=!PORTD.2;cnt3=0;}
