@@ -7,9 +7,9 @@ A=
 C=
 D=5/28/2025
 Files=1
-F1=s5n2.c
+F1=s5n3.c
 OpenedFiles=1
-OF1=s5n2.c
+OF1=s5n3.c
 Active1=1
 DebugOutputListFilesDirectory=Debug\List
 DebugOutputObjectFilesDirectory=Debug
@@ -19,16 +19,8 @@ OutputListFilesDirectory=Release\List
 OutputObjectFilesDirectory=Release
 OutputExecutableFilesDirectory=Release\Exe
 OutputLinkerFilesDirectory=Release\Exe
-AllowDisplayFunctionCallTree=1
+AllowDisplayFunctionCallTree=0
 CleanUp=2
-EditorPanelMode=0
-ActiveEditorPanel=0
-Active0=0
-EditorPanel0=0
-PageIndex0=0
-EditorPanel1=0
-TimeStamp1=1522309144
-PageIndex1=1
 [CompilerDebug]
 Chip=ATmega16
 CPUClock=8000000
@@ -127,8 +119,8 @@ WatchAVR8LAutoVariables=0
 UseEEPROMLocation0=1
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1522309144
-Build=6
+COFFileTimeStamp=1522309516
+Build=4
 [DefinedSymbolsDebug]
 Count=0
 [Compiler]
@@ -230,7 +222,7 @@ UseEEPROMLocation0=1
 RebuildAll=1
 LinkageInformationPresent=0
 COFFileTimeStamp=-1
-Build=6
+Build=4
 [DefinedSymbols]
 Count=0
 [CompilerAdvanced]
@@ -313,50 +305,6 @@ PreserveEEPROM=0
 VerifyProgramming=1
 ProgrammingCounter=0
 RunUserProg=0
-[BookmarksFoldedCode]
-Files=4
-F1=n3.c
-F2=n2.c
-F3=n1.c
-F4=s5n2.c
-[Bookmarks1]
-TimeStamp=1519649622
-Row=0
-Column=0
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode1]
-Line1=9
-Blocks=1
-[Bookmarks2]
-TimeStamp=1519631215
-Row=0
-Column=0
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode2]
-Line1=15
-Blocks=1
 [BuildInfoCompiler]
 L1=Build configuration: Debug
 L2=Chip: ATmega16
@@ -374,8 +322,8 @@ L13=Enhanced function parameters passing: Yes
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 5
-L18=907 line(s) compiled
+L17=Build: 4
+L18=898 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -393,72 +341,27 @@ L32=
 L33=Heap size: 0 byte(s)
 L34=
 L35=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-Lines=37
-L36=Program size: 336 words (672 bytes), 4.1% of FLASH
+L36=Program size: 381 words (762 bytes), 4.7% of FLASH
 L37=0 words (0 bytes), 0.0% reduced by Code Compression
+Lines=37
 [BuildInfoAssembler]
-Lines=12
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s5n2.asm(1645): No EEPROM data, deleting C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\Exe\s5n2.eep
+L4=C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\List\s5n3.asm(1710): No EEPROM data, deleting C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\Debug\Exe\s5n3.eep
 L5=
 L6=ATmega16 memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x0002a0    672      0    672   16384   4.1%
+L9=[.cseg] 0x000000 0x0002fa    762      0    762   16384   4.7%
 L10=[.dseg] 0x000060 0x000160      0      0      0    1024   0.0%
 L11=[.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 L12=
+Lines=12
 [HeadersList]
 Files=1
-F1=C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\s5n2.c
+F1=C:\Users\yasin\Documents\GitHub\Microcontroller_exercises\code Semester 2\s5n3.c
 [Header1]
-Files=3
+Files=2
 F1=C:\cvavr\inc\mega16.h
 F2=C:\cvavr\inc\mega16_bits.h
-F3=C:\cvavr\inc\delay.h
-[Bookmarks3]
-TimeStamp=1519625946
-Row=114
-Column=47
-ScrollPosX=0
-ScrollPosY=6
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode3]
-Line1=6
-Blocks=1
-[Bookmarks0]
-Row=5
-Column=45
-ScrollPosX=0
-ScrollPosY=0
-TimeStamp=1522309274
-[Bookmarks4]
-TimeStamp=1522309144
-Row=145
-Column=26
-ScrollPosX=0
-ScrollPosY=0
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode4]
-Line1=9
-Blocks=1
