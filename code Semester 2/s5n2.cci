@@ -1,0 +1,7 @@
+VERSION:3 SOURCE_TIMESTAMP:5ABC9818
+NODE:I LEVEL:0 LINE:1 "C:\cvavr\inc\mega16.h"
+NODE:I LEVEL:0 LINE:2 "C:\cvavr\inc\delay.h"
+NODE:V LEVEL:0 LINE:3 "cnt1 -> R4,R5"
+NODE:V LEVEL:0 LINE:3 "cnt2 -> R6,R7"
+NODE:F LEVEL:0 LINE:4 "timer1_ovf_isr(void)"
+NODE:F LEVEL:0 LINE:8 "main(void)"
