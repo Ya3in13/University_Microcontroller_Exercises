@@ -6,7 +6,6 @@ interrupt [TIM1_OVF] void timer1_ovf_isr(void){
     if(++cnt2>670){PORTD.1=!PORTD.1;cnt2=0;}
     if(++cnt3>1600){PORTD.2=!PORTD.2;cnt3=0;}
 }
-
 void main(void){
 {
 // Declare your local variables here
