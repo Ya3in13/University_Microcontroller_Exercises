@@ -1,11 +1,16 @@
 #include <mega16.h>
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 bit ki,state=1;
 unsigned int cnt1,cnt2,cnt3,cnt4,cnt5,cntki;
 =======
 
 unsigned int cnt1,cnt2,cnt3,cnt4,cnt5;
+>>>>>>> Stashed changes
+=======
+bit ki,state=1;
+unsigned int cnt1,cnt2,cnt3,cnt4,cnt5,cntki;
 >>>>>>> Stashed changes
 interrupt [TIM1_OVF] void timer1_ovf_isr(void){
     TCNT1=-1000;   
@@ -13,11 +18,17 @@ interrupt [TIM1_OVF] void timer1_ovf_isr(void){
     if(++cnt4>670){PORTB.1=!PORTB.1;cnt4=0;}
     if(++cnt5>1600){PORTB.2=!PORTB.2;cnt5=0;}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     if(++cnt1>50){cnt2++;cnt1=0;} 
     if(ki){cntki++;} 
     
 =======
     if(++cnt1>50){cnt2++;cnt1=0;}
+>>>>>>> Stashed changes
+=======
+    if(++cnt1>50){cnt2++;cnt1=0;} 
+    if(ki){cntki++;} 
+    
 >>>>>>> Stashed changes
 }
 void main(void){
@@ -131,6 +142,9 @@ void main(void){
     #asm("sei")    }
     while(1){
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
         if(!PIND.7)ki=1;
             else{ki=0;
             if(cntki<1000&&cntki>50&&state){
@@ -142,7 +156,10 @@ void main(void){
                 cntki=0;
             }          
         }
+<<<<<<< Updated upstream
         /*----------------------------------------------------------(led)--------------------------------------------------------------------*/
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
         if(cnt2==1)PORTA=0B00000001;
@@ -175,10 +192,14 @@ void main(void){
         if(cnt2==26)PORTA=0B00010001;
         if(cnt2==27)PORTA=0x00;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         if(cnt2==27)cnt2=0;                                           
 =======
         if(cnt2==27)cnt2=0;     
 
+>>>>>>> Stashed changes
+=======
+        if(cnt2==27)cnt2=0;                                           
 >>>>>>> Stashed changes
         }
 }
