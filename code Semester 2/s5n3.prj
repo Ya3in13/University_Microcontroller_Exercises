@@ -22,6 +22,14 @@ OutputExecutableFilesDirectory=Release\Exe
 OutputLinkerFilesDirectory=Release\Exe
 AllowDisplayFunctionCallTree=0
 CleanUp=2
+EditorPanelMode=0
+ActiveEditorPanel=0
+Active0=0
+EditorPanel0=0
+PageIndex0=0
+EditorPanel1=0
+TimeStamp1=1523596183
+PageIndex1=1
 [CompilerDebug]
 Chip=ATmega16
 CPUClock=8000000
@@ -429,7 +437,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1522311666
+TimeStamp=1524782889
 [CompilerDebug]
 RebuildAll=0
 LinkageInformationPresent=1
@@ -447,9 +455,9 @@ SCKFrequency=0
 Files=1
 F1=s5n3.c
 [Bookmarks1]
-TimeStamp=1522311666
-Row=122
-Column=50
+TimeStamp=1523596183
+Row=0
+Column=0
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -463,6 +471,4 @@ BK7=-1
 BK8=-1
 BK9=-1
 [FoldedCode1]
-Line1=15
-Blocks=1
->>>>>>> Stashed changes
+Blocks=0
